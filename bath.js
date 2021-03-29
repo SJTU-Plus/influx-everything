@@ -20,7 +20,6 @@ export async function fetchData() {
             .intField('free', dormitory["status_count"]["free"])
             .intField('used', dormitory["status_count"]["used"])
             .intField('error', dormitory["status_count"]["error"])
-            .floatField('occupy_ratio', (dormitory["status_count"]["used"]) / (dormitory["status_count"]["free"] + dormitory["status_count"]["used"]))
         writeApi.writePoint(bathPeoplePoint)
     }
     await writeApi.flush()

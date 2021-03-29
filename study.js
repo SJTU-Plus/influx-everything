@@ -19,7 +19,6 @@ export async function fetchData() {
             .tag("building_name", room["buildName"])
             .intField("used", room["realTimeNum"])
             .intField("all", parseInt(room["kwNum"]))
-            .floatField("occupy_ratio", room["realTimeNum"] / parseInt(room["kwNum"]))
         writeApi.writePoint(roomPoint)
     }
     await writeApi.flush()
