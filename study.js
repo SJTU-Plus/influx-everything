@@ -7,8 +7,6 @@ const bucket = bucket_prefix + "study";
 const writeApi = client.getWriteApi(org, bucket)
 writeApi.useDefaultTags({ host: 'host1' })
 
-const knownBuildIDs = [{ buildId: 564, buildingName: "东中院" }, { buildId: 128, buildingName: "中院" }]//Can be obtained from /build/findAreaBuild
-
 export async function fetchData() {
 
     const rooms = await axios.post('https://ids.sjtu.edu.cn/classRoom/getByFreeClassroomInfo', `roomCode=LGXQ`, { headers: { 'content-type': 'application/x-www-form-urlencoded; charset=UTF-8' } })
